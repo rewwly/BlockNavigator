@@ -1,0 +1,16 @@
+const axios = require('axios');
+
+// Replace with your blockchain API URL
+const API_URL = 'https://api.blockchain.info';
+
+const getBlockData = async (blockNumber) => {
+    const response = await axios.get(`${API_URL}/block/${blockNumber}`);
+    return response.data;
+};
+
+const getTransactionData = async (transactionId) => {
+    const response = await axios.get(`${API_URL}/transaction/${transactionId}`);
+    return response.data;
+};
+
+module.exports = { getBlockData, getTransactionData };
